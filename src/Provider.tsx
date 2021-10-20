@@ -21,8 +21,6 @@ export default function AnalyticsProvider(props) {
       plugins: analyticsPlugins,
     })
 
-    console.log({ analytics })
-
     setAnalytics(analytics)
 
     const page = (url) => analytics.page({ url })
@@ -31,7 +29,7 @@ export default function AnalyticsProvider(props) {
     return () => NextRouter.events.off("routeChangeStart", page)
   }, [])
 
-  console.log({ enabled, analytics })
+  console.log({ NextRouter, enabled, analytics })
 
   if (!enabled || !analytics) return <>children</>
   return <AnalyticsProvider instance={analytics}>{children}</AnalyticsProvider>
