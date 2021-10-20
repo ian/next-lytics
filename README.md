@@ -144,9 +144,9 @@ const plugins = {
 
 ### Configuration
 
-| Option                           | description                                                    |
-| :------------------------------- | :------------------------------------------------------------- |
-| `org` <br/>**required** - string | FullStory account's `org` ID. The `_fs_org` value in settings. |
+| Option | Type     | Required | Description                                                    | Default |
+| ------ | -------- | -------- | -------------------------------------------------------------- | ------- |
+| org    | `string` | yes      | FullStory account's `org` ID. The `_fs_org` value in settings. |         |
 
 ## Plausible
 
@@ -165,9 +165,9 @@ const plugins = {
 
 ### Configuration
 
-| Option         | Type     | Description                                                       | Default                  |
-| -------------- | -------- | ----------------------------------------------------------------- | ------------------------ |
-| domain         | `string` | Your site's domain, as declared by you in Plausible's settings    | `location.hostname`      |
-| hashMode       | `bool`   | Enables tracking based on URL hash changes.                       | `false`                  |
-| trackLocalhost | `bool`   | Enables tracking on _localhost_.                                  | `false`                  |
-| apiHost        | `string` | Plausible's API host to use. Change this if you are self-hosting. | `'https://plausible.io'` |
+| Option         | Type     | Required | Description                                                       | Default                  |
+| -------------- | -------- | -------- | ----------------------------------------------------------------- | ------------------------ |
+| domain         | `string` | yes      | Your site's domain, as declared by you in Plausible's settings    | `location.hostname`      |
+| hashMode       | `bool`   |          | Enables tracking based on URL hash changes.                       | `false`                  |
+| trackLocalhost | `bool`   |          | Enables tracking on _localhost_.                                  | `false`                  |
+| apiHost        | `string` |          | Plausible's API host to use. Change this if you are self-hosting. | `'https://plausible.io'` |
