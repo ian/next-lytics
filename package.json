@@ -3,15 +3,12 @@
   "author": "Ian Hunter",
   "license": "MIT",
   "repository": "https://github.com/ian/next-lytics",
-  "version": "0.0.0",
+  "version": "0.0.11",
   "description": "",
   "keywords": [
     "react"
   ],
   "main": "dist/index.js",
-  "bin": {
-    "secrets": "./dist/cli.js"
-  },
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "tsc",
@@ -20,13 +17,18 @@
   },
   "devDependencies": {
     "@types/node": "^16.9.1",
-    "tslib": "^2.3.1",
+    "@types/react": ">=16.8.0",
     "typescript": "^4.4.3"
   },
+  "peerDependencies": {
+    "next": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
   "dependencies": {
-    "crypto-js": "^4.1.1",
-    "dotenv": "^10.0.0",
-    "next": "^11.1.2",
-    "redis": "^3.1.2"
+    "@analytics/fullstory": "^0.2.4",
+    "analytics": "^0.7.16",
+    "analytics-plugin-plausible": "^0.0.4",
+    "use-analytics": "^0.0.5"
   }
 }
