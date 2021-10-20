@@ -35,6 +35,20 @@ function MyApp({ Component, pageProps }) {
 export default MyApp
 ```
 
+### 3. Use in your Components
+
+```tsx
+import { useAnalytics } from "next-lytics"
+
+export default function MyComponent() {
+  const { track } = useAnalytics()
+
+  return (
+    <button onClick={() => track("Button Clicked")}>Click me to track</button>
+  )
+}
+```
+
 # Plugins
 
 `next-lytics` supports a number of plugins out of the box by default but can be extended easily.
