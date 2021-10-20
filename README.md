@@ -210,3 +210,23 @@ const plugins = {
 | Option | Type     | Required | Description             | Default |
 | ------ | -------- | -------- | ----------------------- | ------- |
 | apiKey | `string` | yes      | Your Indicative API key |
+
+## Splitbee
+
+Website: https://splitbee.io/
+
+Repository: https://github.com/ian/analytics/tree/main/packages/splitbee
+
+```ts
+const plugins = {
+  splitbee: {
+    token: "123456",
+  },
+}
+```
+
+### Configuration
+
+| Option | Type     | Required | Description             | Default |
+| ------ | -------- | -------- | ----------------------- | ------- |
+| token  | `string` | yes      | Your Splitbee API token |

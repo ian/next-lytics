@@ -31,9 +31,10 @@
   "dependencies": {
     "@analytics/fullstory": "^0.2.4",
     "analytics": "^0.7.16",
-    "analytics-plugin-indicative": "^0.0.3",
+    "analytics-plugin-indicative": "^0.0.5",
     "analytics-plugin-logrocket": "^0.0.5",
-    "analytics-plugin-plausible": "^0.0.4",
+    "analytics-plugin-plausible": "^0.0.6",
+    "analytics-plugin-splitbee": "^0.0.1",
     "use-analytics": "^0.0.5"
   }
 }

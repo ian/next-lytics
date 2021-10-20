@@ -59,6 +59,11 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@splitbee/web@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@splitbee/web/-/web-0.2.4.tgz#173ffab42a9c4d22874d82cd580d2c114480b93f"
+  integrity sha512-LMXnN5X/jen4ssBZ8ULXckQgJVvv8Ox2brcK7g2aLrok8ISzO76+DC0b6Cierk8oIXcx/+aflbVuBaKKFqyBCg==
+
 "@types/node@^16.9.1":
   version "16.11.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.1.tgz#2e50a649a50fc403433a14f829eface1a3443e97"
@@ -83,10 +88,10 @@
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
-analytics-plugin-indicative@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/analytics-plugin-indicative/-/analytics-plugin-indicative-0.0.3.tgz#780f744d52c570f9862f895207e36e0830e41d26"
-  integrity sha512-xEgrE3PtRFZCZCNbWvu1s+pqFJpE1WyM7Pd2R/QW+JVajmMKoRIiZ241wy6wKXZ5KC6hi4NPhEh/K/ATMqlAHg==
+analytics-plugin-indicative@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/analytics-plugin-indicative/-/analytics-plugin-indicative-0.0.5.tgz#21cf2ec7ead6a04c4e1e9dbb8e53a5d290658d17"
+  integrity sha512-M9pPX61Uib7PGjKAb3fgUKJpsxTwuY+EYGb4GeL4Q1H1JNYp+AQYZzWnrxOQXnFCBnMew0eFt712emaQnbHagw==
   dependencies:
     analytics "^0.7.5"
     axios "^0.21.1"
@@ -99,11 +104,20 @@ analytics-plugin-logrocket@^0.0.5:
     analytics "^0.7.5"
     logrocket "^1.0.15"
 
-analytics-plugin-plausible@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/analytics-plugin-plausible/-/analytics-plugin-plausible-0.0.4.tgz#77fb26e1833ded7a5f39a17846671edf1dbb8ca8"
-  integrity sha512-yYsEx3iy8yrmEduMq3oSCSmYXN00Yh/PHE8WLFuT7+1IymKk+VVjIaqKToc3c6kR61tpHY1N0E1PgoA21NEVaw==
+analytics-plugin-plausible@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/analytics-plugin-plausible/-/analytics-plugin-plausible-0.0.6.tgz#22595821f1d201cb2e58dde2bb688d78fae78725"
+  integrity sha512-gXeoJo85JLO91DckbPq23jn/QJW4vg1hA/bRcAbcAo5D6u6JUIg/rG6Ecwkk75sPefnGFIZ6qGHIoz1b2wFK9w==
   dependencies:
+    analytics "^0.7.5"
+    plausible-tracker "^0.3.1"
+
+analytics-plugin-splitbee@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/analytics-plugin-splitbee/-/analytics-plugin-splitbee-0.0.1.tgz#0cbfa810999253dbfb11b52d978f72bc6fb14ec6"
+  integrity sha512-QU6T4RVFxTrfHRVXHQEnAKNlv3VqQ/qrcOmvstJywA3ynV01DMgYPbw7e9jMhIMBkijg5SemFe3PjtBuKLouLQ==
+  dependencies:
+    "@splitbee/web" "^0.2.4"
     analytics "^0.7.5"
 
 analytics-utils@^1.0.4:
@@ -168,6 +182,11 @@ mini-create-react-context@^0.4.1:
   dependencies:
     "@babel/runtime" "^7.12.1"
     tiny-warning "^1.0.3"
+
+plausible-tracker@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/plausible-tracker/-/plausible-tracker-0.3.1.tgz#dd4e1f59cafc7bf1b00e30890567287b3f204efd"
+  integrity sha512-oXnVyfTF2gzkfK3iOZCRZEnf8sH4gBASaJhY+clwWW1orIybfQpfbgg4U5Bwj5dW/4iNstM4tx4jMCVUfMCUbg==
 
 react-is@^16.7.0:
   version "16.13.1"
