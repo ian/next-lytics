@@ -6,8 +6,6 @@ import { configure } from "./plugins"
 const NextRouter = require("next/router")
 
 export default function AnalyticsProvider(props) {
-  return <div>TEST</div>
-
   const { children, enabled = true, plugins } = props
   const analyticsPlugins = configure(plugins)
 
