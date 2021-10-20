@@ -12,7 +12,7 @@ yarn add next-lytics
 
 ### 2. Add the Analytics Provider to app.jsx
 
-```ts
+```tsx
 // pages/_app.jsx
 
 import AnalyticsProvider from "next-lytics"
