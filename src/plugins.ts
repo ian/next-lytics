@@ -1,6 +1,9 @@
+import FullStory from "@analytics/fullstory"
+import Plausible from "analytics-plugin-plausible"
+
 const PLUGINS = {
-  fullstory: () => require("@analytics/fullstory"),
-  plausible: () => require("analytics-plugin-plausible"),
+  fullstory: (config) => FullStory(config),
+  plausible: (config) => Plausible(config),
 }
 
 export function configure(pluginsConfig) {
@@ -9,7 +12,7 @@ export function configure(pluginsConfig) {
       const plugin = PLUGINS[name]
 
       if (plugin) {
-        return plugin()(config)
+        return plugin(config)
       } else {
         console.warn(`Plugin ${name} not found.`)
       }

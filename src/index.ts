@@ -1,2 +1,3 @@
+import Provider from "./Provider"
 export { useAnalytics } from "use-analytics"
-export { default } from "./Provider"
+export default Provider
