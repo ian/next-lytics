@@ -1,9 +1,11 @@
 import FullStory from "@analytics/fullstory"
+import Indicative from "analytics-plugin-indicative"
 import Plausible from "analytics-plugin-plausible"
 import LogRocket from "analytics-plugin-logrocket"
 
 const PLUGINS = {
   fullstory: (config) => FullStory(config),
+  indicative: (config) => Indicative(config),
   logrocket: (config) => LogRocket(config),
   plausible: (config) => Plausible(config),
 }

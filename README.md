@@ -132,7 +132,9 @@ const plugins = {
 
 ## FullStory
 
-Full documentation on plugin here: https://github.com/DavidWells/analytics/tree/master/packages/analytics-plugin-fullstory#readme
+Website: https://fullstory.com/
+
+Repository: https://github.com/DavidWells/analytics/tree/master/packages/analytics-plugin-fullstory#readme
 
 ```ts
 const plugins = {
@@ -150,7 +152,9 @@ const plugins = {
 
 ## Plausible
 
-Full documentation on plugin here: https://github.com/DavidWells/analytics/tree/master/packages/analytics-plugin-fullstory#readme
+Website: https://plausible.io/
+
+Repository: https://github.com/DavidWells/analytics/tree/master/packages/analytics-plugin-fullstory#readme
 
 ```ts
 const plugins = {
@@ -183,6 +187,26 @@ const plugins = {
 
 ### Configuration
 
-| Option | Type     | Required | Description        | Default |
-| ------ | -------- | -------- | ------------------ | ------- |
-| appId  | `string` | yes      | Your site's App ID |
+| Option | Type     | Required | Description           | Default |
+| ------ | -------- | -------- | --------------------- | ------- |
+| appId  | `string` | yes      | Your LogRocket App ID |
+
+## Indicative
+
+Website: https://www.indicative.com/
+
+Repository: https://github.com/ian/analytics/tree/main/packages/indicative
+
+```ts
+const plugins = {
+  indicative: {
+    apiKey: "123456",
+  },
+}
+```
+
+### Configuration
+
+| Option | Type     | Required | Description             | Default |
+| ------ | -------- | -------- | ----------------------- | ------- |
+| apiKey | `string` | yes      | Your Indicative API key |
