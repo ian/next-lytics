@@ -31,6 +31,7 @@
   "dependencies": {
     "@analytics/fullstory": "^0.2.4",
     "analytics": "^0.7.16",
+    "analytics-plugin-logrocket": "^0.0.5",
     "analytics-plugin-plausible": "^0.0.4",
     "use-analytics": "^0.0.5"
   }

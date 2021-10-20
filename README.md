@@ -155,10 +155,7 @@ Full documentation on plugin here: https://github.com/DavidWells/analytics/tree/
 ```ts
 const plugins = {
   plausible: {
-    domain: "example.com", // By default window.location.hostname
-    hashMode: true, // By default 'false'
-    trackLocalhost: true, // By default 'false'
-    apiHost: "https://my-plausible-api.domain.com/", // By default 'https://plausible.io'
+    domain: "example.com",
   },
 }
 ```
@@ -171,3 +168,21 @@ const plugins = {
 | hashMode       | `bool`   |          | Enables tracking based on URL hash changes.                       | `false`                  |
 | trackLocalhost | `bool`   |          | Enables tracking on _localhost_.                                  | `false`                  |
 | apiHost        | `string` |          | Plausible's API host to use. Change this if you are self-hosting. | `'https://plausible.io'` |
+
+## LogRocket
+
+Full documentation on plugin here: https://github.com/ian/analytics/tree/main/packages/logrocket
+
+```ts
+const plugins = {
+  logrocket: {
+    appId: "123456",
+  },
+}
+```
+
+### Configuration
+
+| Option | Type     | Required | Description        | Default |
+| ------ | -------- | -------- | ------------------ | ------- |
+| appId  | `string` | yes      | Your site's App ID |
