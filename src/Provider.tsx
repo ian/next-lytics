@@ -27,6 +27,6 @@ export default function AnalyticsProvider(props) {
     return () => Router.events.off("routeChangeStart", page)
   }, [])
 
-  if (!enabled || !analytics) return <>children</>
+  if (!enabled || !analytics) return children
   return <AnalyticsProvider instance={analytics}>{children}</AnalyticsProvider>
 }
