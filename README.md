@@ -1,6 +1,8 @@
 # next-lytics
 
-Zero-config Analytics stack for Next.js, powered by [Analytics](https://github.com/DavidWells/analytics).
+Zero-config Analytics stack for Next.js that just works.
+
+Powered by the [Analytics](https://github.com/DavidWells/analytics) package.
 
 # Installation
 
@@ -48,6 +50,22 @@ export default function MyComponent() {
   )
 }
 ```
+
+# Methods
+
+## `track`
+
+Track an analytics event. Full documentation: https://github.com/DavidWells/analytics#analyticstrack
+
+## `page`
+
+Trigger page view. Full documentation: https://github.com/DavidWells/analytics#analyticspage.
+
+Note - The Analytics provider will automatically track Next.js page views, only use this if you need to trigger a custom page event.
+
+## `identify`
+
+Identify a user. Full documentation: https://github.com/DavidWells/analytics#analyticsidentify
 
 # Plugins
 
