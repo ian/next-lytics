@@ -1,3 +1,4 @@
+import Amplitude from "@analytics/amplitude"
 import FullStory from "@analytics/fullstory"
 import GoogleAnalytics from "@analytics/google-analytics"
 import Indicative from "analytics-plugin-indicative"
@@ -6,6 +7,7 @@ import Plausible from "analytics-plugin-plausible"
 import Splitbee from "analytics-plugin-splitbee"
 
 const PLUGINS = {
+  amplitude: (config) => Amplitude(config),
   fullstory: (config) => FullStory(config),
   googleAnalytics: (config) => GoogleAnalytics(config),
   indicative: (config) => Indicative(config),

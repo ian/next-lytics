@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@analytics/amplitude@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@analytics/amplitude/-/amplitude-0.0.3.tgz#15ccb76094d6f1003979a4f3aa5d3263781bd776"
+  integrity sha512-VVJWK3rth+Ak3PiyyzLAz/TUsvhToVXJ6ejvtEIggnNE9bwLDVUHak76MeNlBAS/CCW1SzkWcjbKPpYnnn5aLw==
+
 "@analytics/cookie-utils@^0.2.7":
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/@analytics/cookie-utils/-/cookie-utils-0.2.7.tgz#10eec7e54f0adb7e07e1232c349da07bdf6d79c7"

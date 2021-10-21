@@ -96,7 +96,7 @@ const plugins = {
 
 Our goal is to support the major analytics platforms that any new Next.js project would likely use, without the need to npm install a ton of external libraries.
 
-<!-- ## Amplitude
+## Amplitude
 
 Full documentation on plugin here: https://github.com/DavidWells/analytics/tree/master/packages/analytics-plugin-amplitude
 
@@ -108,10 +108,10 @@ const plugins = {
 }
 ```
 
-| Option                              | description               |
-| :---------------------------------- | :------------------------ |
-| `apiKey` <br/>**required** - string | Amplitude project API key |
-| `options` <br/> - object            | Amplitude SDK options     | -->
+| Option    | Type     | Required | Description               | Default |
+| :-------- | :------- | -------- | ------------------------- | ------- |
+| `apiKey`  | `string` | yes      | Amplitude project API key |
+| `options` | `object` |          | Amplitude SDK options     |
 
 ## Google Analytics
 

@@ -29,6 +29,7 @@
     "react-dom": "*"
   },
   "dependencies": {
+    "@analytics/amplitude": "^0.0.3",
     "@analytics/fullstory": "^0.2.4",
     "@analytics/google-analytics": "^0.5.3",
     "analytics": "^0.7.16",
