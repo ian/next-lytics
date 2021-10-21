@@ -1,31 +1,7 @@
-import Amplitude from "@analytics/amplitude"
-import FullStory from "@analytics/fullstory"
-import GoogleAnalytics from "@analytics/google-analytics"
-import Indicative from "analytics-plugin-indicative"
-import LogRocket from "analytics-plugin-logrocket"
-import Plausible from "analytics-plugin-plausible"
-import Splitbee from "analytics-plugin-splitbee"
-
-const PLUGINS = {
-  amplitude: (config) => Amplitude(config),
-  fullstory: (config) => FullStory(config),
-  googleAnalytics: (config) => GoogleAnalytics(config),
-  indicative: (config) => Indicative(config),
-  logrocket: (config) => LogRocket(config),
-  plausible: (config) => Plausible(config),
-  splitbee: (config) => Splitbee(config),
-}
-
-export function configure(pluginsConfig) {
-  return Object.entries(pluginsConfig)
-    .map(([name, config]) => {
-      const plugin = PLUGINS[name]
-
-      if (plugin) {
-        return plugin(config)
-      } else {
-        console.warn(`Plugin ${name} not found.`)
-      }
-    })
-    .filter((f) => f)
-}
+export { default as Amplitude } from "./plugins/amplitude"
+export { default as FullStory } from "./plugins/fullstory"
+export { default as GoogleAnalytics } from "./plugins/googleAnalytics"
+export { default as Indicative } from "./plugins/indicative"
+export { default as LogRocket } from "./plugins/logrocket"
+export { default as Plausible } from "./plugins/plausible"
+export { default as Splitbee } from "./plugins/splitbee"

@@ -2,7 +2,9 @@
 
 Zero-config Analytics stack for Next.js that just works.
 
-Run your own Segment-like analytics multiplexer. Powered by the [Analytics](https://github.com/DavidWells/analytics) package.
+Run your own Segment-like analytics multiplexer, powered by the [Analytics](https://github.com/DavidWells/analytics) package.
+
+The primary motivation behind this was to just have an inclusive, startup-collection of analytics that are packaged together rather than `yarn add analytics-package-xyz` 10 times for every new project. By taking advantage of Next.js tree shaking we only include the plugins during build-time that are being used.
 
 # Installation
 
@@ -18,13 +20,14 @@ yarn add next-lytics
 // pages/_app.jsx
 
 import AnalyticsProvider from "next-lytics"
+import { FullStory } from "next-lytics/plugins"
 
-const plugins = {
-  fullstory: {
+const plugins = [
+  FullStory({
     org: "12345",
-  },
+  }),
   // ... add more plugins here
-}
+]
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -73,39 +76,22 @@ Identify a user. Full documentation: https://github.com/DavidWells/analytics#ana
 
 Any anaytics plugin listed in here can be added to the Analytics stack: https://github.com/DavidWells/analytics#analytic-plugins
 
-<!-- # Adding a Custom Plugin
-
-Just install the plugin and add it to your plugins config:
-
-```sh
-yarn add analytics-custom-plugin
-```
-
-```ts
-import CustomPlugin from "analytics-custom-plugin"
-
-const plugins = {
-  CustomPlugin: {
-    id: "xyz",
-    // ... config
-  },
-}
-``` -->
-
 # Built-In Plugins
 
-Our goal is to support the major analytics platforms that any new Next.js project would likely use, without the need to npm install a ton of external libraries.
+Our goal is to support the major analytics platforms that any new Next.js project/startup would likely use, without the need to npm install a ton of external libraries.
 
 ## Amplitude
 
 Full documentation on plugin here: https://github.com/DavidWells/analytics/tree/master/packages/analytics-plugin-amplitude
 
 ```ts
-const plugins = {
-  amplitude: {
+import { Amplitude } from "next-lytics/plugins"
+
+const plugins = [
+  Amplitude({
     apiKey: "token",
-  },
-}
+  }),
+]
 ```
 
 | Option    | Type     | Required | Description               | Default |
@@ -118,11 +104,13 @@ const plugins = {
 Full documentation on plugin here: https://github.com/DavidWells/analytics/tree/master/packages/analytics-plugin-google-analytics
 
 ```ts
-const plugins = {
-  googleAnalytics: {
+import { GoogleAnalytics } from "next-lytics/plugins"
+
+const plugins = [
+  GoogleAnalytics({
     trackingId: "UA-1234567",
-  },
-}
+  }),
+]
 ```
 
 ### Configuration
@@ -169,11 +157,13 @@ Website: https://fullstory.com/
 Repository: https://github.com/DavidWells/analytics/tree/master/packages/analytics-plugin-fullstory#readme
 
 ```ts
-const plugins = {
-  fullstory: {
+import { FullStory } from "next-lytics/plugins"
+
+const plugins = [
+  FullStory({
     org: "12345",
-  },
-}
+  }),
+]
 ```
 
 ### Configuration
@@ -189,11 +179,13 @@ Website: https://plausible.io/
 Repository: https://github.com/DavidWells/analytics/tree/master/packages/analytics-plugin-fullstory#readme
 
 ```ts
-const plugins = {
-  plausible: {
+import { Plausible } from "next-lytics/plugins"
+
+const plugins = [
+  Plausible({
     domain: "example.com",
-  },
-}
+  }),
+]
 ```
 
 ### Configuration
@@ -210,11 +202,13 @@ const plugins = {
 Full documentation on plugin here: https://github.com/ian/analytics/tree/main/packages/logrocket
 
 ```ts
-const plugins = {
-  logrocket: {
+import { LogRocket } from "next-lytics/plugins"
+
+const plugins = [
+  LogRocket({
     appId: "123456",
-  },
-}
+  }),
+]
 ```
 
 ### Configuration
@@ -230,11 +224,13 @@ Website: https://www.indicative.com/
 Repository: https://github.com/ian/analytics/tree/main/packages/indicative
 
 ```ts
-const plugins = {
-  indicative: {
+import { Indicative } from "next-lytics/plugins"
+
+const plugins = [
+  Indicative({
     apiKey: "123456",
-  },
-}
+  }),
+]
 ```
 
 ### Configuration
@@ -250,11 +246,13 @@ Website: https://splitbee.io/
 Repository: https://github.com/ian/analytics/tree/main/packages/splitbee
 
 ```ts
-const plugins = {
-  splitbee: {
+import { Splitbee } from "next-lytics/plugins"
+
+const plugins = [
+  Splitbee({
     token: "123456",
-  },
-}
+  }),
+]
 ```
 
 ### Configuration
@@ -262,3 +260,22 @@ const plugins = {
 | Option | Type     | Required | Description             | Default |
 | ------ | -------- | -------- | ----------------------- | ------- |
 | token  | `string` | yes      | Your Splitbee API token |
+
+# Adding a Custom Plugin
+
+Just install the plugin and add it to your plugins config. You can use any Analytics compatible plugin from here: https://github.com/DavidWells/analytics#analytic-plugins
+
+```sh
+yarn add analytics-custom-plugin
+```
+
+```ts
+import CustomPlugin from "analytics-custom-plugin"
+
+const plugins = [
+  CustomPlugin({
+    id: "xyz",
+    // ... other config
+  }),
+]
+```

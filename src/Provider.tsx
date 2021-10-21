@@ -1,22 +1,27 @@
 import React, { useEffect, useState } from "react"
 import Analytics from "analytics"
-import { AnalyticsProvider } from "use-analytics"
-import { configure } from "./plugins"
+import { AnalyticsProvider as UseAnalyticsProvider } from "use-analytics"
 
 const { useRouter, Router } = require("next/router")
 
-export default function AnalyticsProvider(props) {
-  const { children, enabled = true, plugins } = props
-  const analyticsPlugins = configure(plugins)
+type Props = {
+  children: any
+  enabled?: boolean
+  plugins: Record<string, unknown>[]
+}
 
+export default function AnalyticsProvider(props: Props) {
+  const { children, enabled = true, plugins } = props
   const [analytics, setAnalytics] = useState(null)
   const router = useRouter()
+
+  if (!enabled) return children
 
   useEffect(() => {
     // for now we need to load this in the browser, there is a bug with the gtag implementation
     const analytics = Analytics({
       app: "test",
-      plugins: analyticsPlugins,
+      plugins,
     })
 
     setAnalytics(analytics)
@@ -27,6 +32,8 @@ export default function AnalyticsProvider(props) {
     return () => Router.events.off("routeChangeStart", page)
   }, [])
 
-  if (!enabled || !analytics) return children
-  return <AnalyticsProvider instance={analytics}>{children}</AnalyticsProvider>
+  if (!analytics) return children
+  return (
+    <UseAnalyticsProvider instance={analytics}>{children}</UseAnalyticsProvider>
+  )
 }

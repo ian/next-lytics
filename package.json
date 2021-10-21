@@ -8,9 +8,14 @@
   "keywords": [
     "react"
   ],
-  "main": "dist/index.js",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": "./index.js",
+    "./plugins": "./plugins.js"
+  },
   "files": [
-    "dist"
+    "**/*"
   ],
   "scripts": {
     "clean": "rm -rf ./dist",
