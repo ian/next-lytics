@@ -1,4 +1,5 @@
 import FullStory from "@analytics/fullstory"
+import GoogleAnalytics from "@analytics/google-analytics"
 import Indicative from "analytics-plugin-indicative"
 import LogRocket from "analytics-plugin-logrocket"
 import Plausible from "analytics-plugin-plausible"
@@ -6,6 +7,7 @@ import Splitbee from "analytics-plugin-splitbee"
 
 const PLUGINS = {
   fullstory: (config) => FullStory(config),
+  googleAnalytics: (config) => GoogleAnalytics(config),
   indicative: (config) => Indicative(config),
   logrocket: (config) => LogRocket(config),
   plausible: (config) => Plausible(config),

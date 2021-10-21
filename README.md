@@ -2,7 +2,7 @@
 
 Zero-config Analytics stack for Next.js that just works.
 
-Powered by the [Analytics](https://github.com/DavidWells/analytics) package.
+Run your own Segment-like analytics multiplexer. Powered by the [Analytics](https://github.com/DavidWells/analytics) package.
 
 # Installation
 
@@ -113,13 +113,13 @@ const plugins = {
 | `apiKey` <br/>**required** - string | Amplitude project API key |
 | `options` <br/> - object            | Amplitude SDK options     | -->
 
-<!-- ## Google Analytics
+## Google Analytics
 
 Full documentation on plugin here: https://github.com/DavidWells/analytics/tree/master/packages/analytics-plugin-google-analytics
 
 ```ts
 const plugins = {
-  googleTagManager: {
+  googleAnalytics: {
     trackingId: "UA-1234567",
   },
 }
@@ -127,18 +127,18 @@ const plugins = {
 
 ### Configuration
 
-| Option                                                 | description                                                                                                                                                                              |
-| :----------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `trackingId` <br/>**required** - string                | Google Analytics site tracking Id                                                                                                                                                        |
-| `debug` <br/>_optional_ - boolean                      | Enable Google Analytics debug mode                                                                                                                                                       |
-| `anonymizeIp` <br/>_optional_ - boolean                | Enable [Anonymizing IP addresses](https://bit.ly/3c660Rd) sent to Google Analytics. [See details below](#anonymize-visitor-ips)                                                          |
-| `customDimensions` <br/>_optional_ - object            | Map [Custom dimensions](https://bit.ly/3c5de88) to send extra information to Google Analytics. [See details below](#using-ga-custom-dimensions)                                          |
-| `resetCustomDimensionsOnPage` <br/>_optional_ - object | Reset custom dimensions by key on analytics.page() calls. Useful for single page apps.                                                                                                   |
-| `setCustomDimensionsToPage` <br/>_optional_ - boolean  | Mapped dimensions will be set to the page & sent as properties of all subsequent events on that page. If false, analytics will only pass custom dimensions as part of individual events  |
-| `instanceName` <br/>_optional_ - string                | Custom tracker name for google analytics. Use this if you need multiple googleAnalytics scripts loaded                                                                                   |
-| `customScriptSrc` <br/>_optional_ - string             | Custom URL for google analytics script, if proxying calls                                                                                                                                |
-| `cookieConfig` <br/>_optional_ - object                | Additional cookie properties for configuring the [ga cookie](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookies-user-id#configuring_cookie_field_settings) |
-| `tasks` <br/>_optional_ - object                       | [Set custom google analytic tasks](https://developers.google.com/analytics/devguides/collection/analyticsjs/tasks)                                                                       | -->
+| Option                        | Type      | Required | Description                                                                                                                                                                              | Default |
+| :---------------------------- | :-------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `trackingId`                  | `string`  | yes      | Google Analytics site tracking Id                                                                                                                                                        |
+| `debug`                       | `boolean` |          | Enable Google Analytics debug mode                                                                                                                                                       |
+| `anonymizeIp`                 | `boolean` |          | Enable [Anonymizing IP addresses](https://bit.ly/3c660Rd) sent to Google Analytics. [See details below](#anonymize-visitor-ips)                                                          |
+| `customDimensions`            | `object`  |          | Map [Custom dimensions](https://bit.ly/3c5de88) to send extra information to Google Analytics. [See details below](#using-ga-custom-dimensions)                                          |
+| `resetCustomDimensionsOnPage` | `object`  |          | Reset custom dimensions by key on analytics.page() calls. Useful for single page apps.                                                                                                   |
+| `setCustomDimensionsToPage`   | `boolean` |          | Mapped dimensions will be set to the page & sent as properties of all subsequent events on that page. If false, analytics will only pass custom dimensions as part of individual events  |
+| `instanceName`                | `string`  |          | Custom tracker name for google analytics. Use this if you need multiple googleAnalytics scripts loaded                                                                                   |
+| `customScriptSrc`             | `string`  |          | Custom URL for google analytics script, if proxying calls                                                                                                                                |
+| `cookieConfig`                | `object`  |          | Additional cookie properties for configuring the [ga cookie](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookies-user-id#configuring_cookie_field_settings) |
+| `tasks`                       | `object`  |          | [Set custom google analytic tasks](https://developers.google.com/analytics/devguides/collection/analyticsjs/tasks)                                                                       |
 
 <!-- ## Google Tag Manager
 
